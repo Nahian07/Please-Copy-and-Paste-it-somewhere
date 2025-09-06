@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy-Paste</title>
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #444);
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      user-select: text;
+      cursor: default;
+    }
+
+    h1::selection {
+      background: #ffccc4;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+    <h1>Please don't copy it.</h1>
+
+
+    <script>
+        document.addEventListener("copy", function(e) {
+            e.clipboardData.setData('text/plain', '🖕');
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
